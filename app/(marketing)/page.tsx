@@ -33,15 +33,17 @@ export default function Home() {
             </SignedOut>
 
             <SignedIn>
+              
+            <Link href={'/learn'}>
               <Button
                 variant={"secondary"}
                 size={"lg"}
                 className="w-full"
               >
-                <Link href={'/learn'}>
                   Continue Learning
-                </Link>
               </Button>
+              
+              </Link>
             </SignedIn>
 
           </ClerkLoaded>
