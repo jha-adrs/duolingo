@@ -2,6 +2,8 @@
 import React from 'react';
 import { Button } from './ui/button';
 import { usePathname } from 'next/navigation';
+import Link from 'next/link';
+import Image from 'next/image';
 
 interface SidebarItemProps {
     label: string;
@@ -20,11 +22,16 @@ export const SidebarItem = ({
         <Button variant={
             isActive ? 'sidebarOutline' : 'sidebar'
         }
-            className='justify-start h-[52px'
+            className='justify-start h-[52px]'
+            asChild
         >
-            <div className="flex items-center gap-x-3">
-                {label}
-            </div>
+            <Link href={href}>
+                <Image src={iconSrc} alt={label} height={24} width={24}
+                className='mr-5'
+                
+                />
+                <span>{label}</span>
+            </Link>
         </Button>
     )
 }
